@@ -14,7 +14,7 @@ Image have to be in "png"
 
 ## Installation
 
-  bash install.sh
+  bash install.sh (you need to open new terminal tab to get the effect)
 
 ## Usage / Workflow : 
 1. Show an image as splash
