@@ -21,7 +21,7 @@ if [[ -z "$(cat $HOME/.bashrc | grep $script_identifier)" ]]; then
   # add identifier
   echo "# $script_identifier" >> $HOME/.bashrc
   # add auto source script
-  "echo" "alias splash='python $HOME/Documents/.script/splash.py'" >> $HOME/.bashrc
+  "echo" "alias splash='python $destination_path/$script_name'" >> $HOME/.bashrc
   echo "registering to bashrc done"
 else # case if already installed
   echo 
