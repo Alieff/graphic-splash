@@ -17,13 +17,14 @@ Image have to be in "png"
   bash install.sh (you need to open new terminal tab to get the effect)
 
 ## Usage / Workflow : 
+
 1. Show an image as splash
 
-python <path_to_the_script> <image_path>
+    python <path_to_the_script> <image_path>
 
-or
+    or
 
-splash <image_path>
+    splash <image_path>
 
 ## Other Command: 
 
