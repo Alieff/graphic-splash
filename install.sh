@@ -27,6 +27,6 @@ if [ -z "$(cat $HOME/.bashrc | grep $script_identifier)" ]; then
   echo "if you want to remove just edit '$HOME/.bashrc'"
 else # case if already installed
   echo 
-  echo "$script_name auto source is already defined / alias already defined"
+  echo "$script_name auto source is already defined"
   echo
 fi
