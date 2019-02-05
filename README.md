@@ -2,6 +2,8 @@
 
 Spawn splash image with transparent background
 
+Image have to be in "png"
+
 (This project actually just a little modification of example from Cairo)
 
 ## Dependency
