@@ -18,13 +18,13 @@ else # case if already installed
 fi
 
 # register the script for auto source
-if [ -z "$(cat $HOME/.bashrc | grep $script_identifier)" ] && [ $(alias "$alias_name"; echo $?) -eq 1 ]; then 
+if [ -z "$(cat $HOME/.bashrc | grep $script_identifier)" ]; then 
   # add identifier
   echo "# $script_identifier" >> $HOME/.bashrc
   # add auto source script
   "echo" "alias $alias_name='python $destination_path/$script_name'" >> $HOME/.bashrc
   echo "registering to bashrc done"
-  echo "if you want to remove the alias just edit '$HOME/.bashrc'"
+  echo "if you want to remove just edit '$HOME/.bashrc'"
 else # case if already installed
   echo 
   echo "$script_name auto source is already defined / alias already defined"
