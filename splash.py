@@ -1,18 +1,8 @@
-""" Transparent, irregular edge splash screen with pyGTK and XShape.
-Takes a png image with transparent section, creates a window with pyGTK, puts this image in
-there with cairo and then trims the edges with X11 XShape clipping extension.
-This file demonstrates a python script which loads a png image of size 800x650 and name base.png
-Then it creates a GTK+/Cairo window with opaque settings from the png file and the transparent
-portions cut out with a mask. Basic, but works and looks great.
-Note: this is a proof of concept file. It works, but it is by no means production ready.
-"""
-
 import sys
 import os
 import gi
 gi.require_version('Gtk','3.0')
 from gi.repository import Gtk, Gdk, GObject
-import cairo
 import gobject
 class TransparentWindow(Gtk.Window):
     def __init__(self, filename):
