@@ -59,7 +59,14 @@ class TransparentWindow(Gtk.Window):
     def on_key_press(self, widget, event):
         # print("      Key val, name: ", event.keyval, Gdk.keyval_name(event.keyval))
         keypress = Gdk.keyval_name(event.keyval)
-        if keypress == 'Return' and self.entry.get_text() == 'oke':
+        user_input = self.entry.get_text()
+        confirmations = [
+            'k',
+            'ok',
+            'oke',
+            'siap'
+        ]
+        if keypress == 'Return' and (user_input in confirmations):
             self.destroy()
 
 
