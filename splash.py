@@ -14,11 +14,13 @@ gi.require_version('Gtk','3.0')
 from gi.repository import Gtk, Gdk, GObject
 import cairo
 import gobject
+
 class TransparentWindow(Gtk.Window):
     def __init__(self, filename):
         Gtk.Window.__init__(self)
 
         self.set_size_request(300, 220)
+        self.set_keep_above(True)
 
         # pasang event delete, biar bisa di close
         self.connect('destroy', Gtk.main_quit)
@@ -60,15 +62,18 @@ class TransparentWindow(Gtk.Window):
         # print("      Key val, name: ", event.keyval, Gdk.keyval_name(event.keyval))
         keypress = Gdk.keyval_name(event.keyval)
         user_input = self.entry.get_text()
-        confirmations = [
-            'k',
-            'ok',
-            'oke',
-            'siap'
-        ]
-        if keypress == 'Return' and (user_input in confirmations):
+        if keypress == 'Return':
             self.destroy()
+            self.result = user_input
+            print(user_input)
 
+    # biar ga langsung ke close
+    def hold(self):
+        Gtk.main()
+
+    def quit(self):
+        Gtk.main_quit()
+        return False
 
 if __name__ == "__main__":
     filename="/home/pulpen/Pictures/bot/hello-fusion.png"
@@ -87,8 +92,7 @@ if __name__ == "__main__":
             filename="/home/pulpen/Pictures/bot/minum-fusion.png"
         else :
             filename=sys.argv[1]
-
-# spawn transparent window
-TransparentWindow(filename)
-# start processing loop biar ga langsung ke close
-Gtk.main()
+    # spawn transparent window
+    TransparentWindow(filename)
+    # start processing loop biar ga langsung ke close
+    Gtk.main()
